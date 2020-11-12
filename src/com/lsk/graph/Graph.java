@@ -110,6 +110,18 @@ public class Graph {
     }
 
     /**
+     * 重载dfs,遍历所有结点
+     * @param index
+     */
+    public void dfs(int index){
+        for(int i = index;i<vertex.size();i++){
+            if(!isVisited[i]){
+                dfs(isVisited,i);
+            }
+        }
+    }
+
+    /**
      * 深度优先遍历
      * @param isVisited 每次遍历都需要判断是否被访问过
      * @param i 当前结点
@@ -132,13 +144,13 @@ public class Graph {
     }
 
     /**
-     * 重载dfs,遍历所有结点
+     * 重载，遍历所有结点。
      * @param index
      */
-    public void dfs(int index){
+    public void bfs(int index){
         for(int i = index;i<vertex.size();i++){
             if(!isVisited[i]){
-                dfs(isVisited,i);
+                bfs(isVisited,i);
             }
         }
     }
@@ -169,18 +181,6 @@ public class Graph {
                  }
                  w = getNeighbor(u,w);
              }
-        }
-    }
-
-    /**
-     * 重载，遍历所有结点。
-     * @param index
-     */
-    public void bfs(int index){
-        for(int i = index;i<vertex.size();i++){
-            if(!isVisited[i]){
-                bfs(isVisited,i);
-            }
         }
     }
 

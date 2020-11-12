@@ -26,59 +26,62 @@ public class Prime {
         graph.insert(5, 3, 4);
         graph.insert(5, 6, 6);
         graph.print(graph.edges);
-        graph.prime(graph,0);
+        graph.prime(graph, 0);
 
     }
 
 
 }
-class TGraph{
+
+class TGraph {
     public ArrayList<String> vertex;
     public int[][] edges;
 
-    public int[][] insert(int v1,int v2,int weight){
-       edges[v1][v2] = weight;
-       edges[v2][v1] = weight;
-       return edges;
+    public int[][] insert(int v1, int v2, int weight) {
+        edges[v1][v2] = weight;
+        edges[v2][v1] = weight;
+        return edges;
     }
-    public TGraph(int n){
+
+    public TGraph(int n) {
         vertex = new ArrayList<>(n);
         edges = new int[n][n];
     }
 
     /**
      * 二维矩阵打印
+     *
      * @param edges
      */
-    public void print(int[][] edges){
-        for(int[] ints : edges){
+    public void print(int[][] edges) {
+        for (int[] ints : edges) {
             System.out.println(Arrays.toString(ints));
         }
         System.out.println();
     }
 
-    public  void prime(TGraph graph, int index) {
+    public void prime(TGraph graph, int index) {
         //标记是否被访问
         int n = graph.vertex.size();
         int minWeight = 10000;
         int h1 = -1;
-        int h2=-1;
+        int h2 = -1;
         boolean isVisited[] = new boolean[n];
         isVisited[index] = true;
         //最小生成树会有n-1条边，所以需要遍历n-1次
         for (int k = 1; k < n; k++) {
             //i表示已经访问过的结点位置
-            for (int i = 0; i < n; i++){
+            for (int i = 0; i < n; i++) {
                 //j表示还没访问过的结点位置
-                for(int j = 0;j<n;j++){
-                    if(isVisited[i] && !isVisited[j] && graph.edges[i][j] !=0 && graph.edges[i][j]<minWeight){
+                for (int j = 0; j < n; j++) {
+                    if (isVisited[i] && !isVisited[j] && graph.edges[i][j] != 0 && graph.edges[i][j] < minWeight) {
                         minWeight = graph.edges[i][j];
                         h1 = i;
                         h2 = j;
                     }
                 }
             }
-            System.out.println("访问("+graph.vertex.get(h1)+","+graph.vertex.get(h2)+","+minWeight+")");
+            System.out.println("访问(" + graph.vertex.get(h1) + "," + graph.vertex.get(h2) + "," + minWeight + ")");
             isVisited[h2] = true;
             minWeight = 10000;
         }

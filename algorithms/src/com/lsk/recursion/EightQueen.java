@@ -70,6 +70,5 @@ public class EightQueen {
                 check(n+1);
             }
         }
-
     }
 }
