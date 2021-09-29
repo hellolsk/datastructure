@@ -8,6 +8,7 @@ package com.lsk.tree;
 
 /**
  * 定义二叉树
+ * @author hellolsk
  */
 public class BinaryTree {
 
@@ -51,6 +52,14 @@ public class BinaryTree {
             root.postTraverse();
         } else {
             System.out.println("二叉树为空！无法遍历！");
+        }
+    }
+
+    /**
+     * 层序遍历
+     */
+    public void levelTraverse(){
+        if(root == null){
         }
     }
 

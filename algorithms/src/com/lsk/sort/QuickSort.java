@@ -57,7 +57,7 @@ public class QuickSort {
         }
         //一遍排序结束，基准值位置就确定了，即左边均小于它，右边均大于它
 //        System.out.println("start："+start);
-//        System.out.println(Arrays.toString(arr));
+        System.out.println(Arrays.toString(arr));
         //如果当前起始位置大于标记,说明左边序列仍有元素，对左序列递归进行快速排序
         if(start>low){
             quickSort(arr,low,start-1);

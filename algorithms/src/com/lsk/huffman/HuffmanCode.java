@@ -96,7 +96,7 @@ public class HuffmanCode {
         for (byte b : bytes) {
             stringBuilder.append(huffmanCodes.get(b));
         }
-        System.out.println(stringBuilder.toString());
+//        System.out.println(stringBuilder.toString());
 
         //定义赫夫曼压缩的字节数组的长度
         int len;
@@ -138,7 +138,7 @@ public class HuffmanCode {
         getCodes(huffmanTreeRoot);
         //测试赫夫曼编码
 		for(Byte key : huffmanCodes.keySet()){
-			System.out.println("key:"+key+"--->"+huffmanCodes.get(key));
+//			System.out.println("key:"+key+"--->"+huffmanCodes.get(key));
 		}
         byte[] bytesCodes = zip(bytes, huffmanCodes);
         return bytesCodes;
@@ -184,7 +184,7 @@ public class HuffmanCode {
             boolean flag = (i==huffManBytes.length-1);
             stringBuilder.append(byteToBitString(!flag,b));
         }
-        System.out.println(stringBuilder.toString());
+//        System.out.println(stringBuilder.toString());
         //实现map翻转
         Map<String,Byte> reverseCodeMap = new HashMap<>();
         for(Map.Entry<Byte,String> entry : huffManCodes.entrySet()){

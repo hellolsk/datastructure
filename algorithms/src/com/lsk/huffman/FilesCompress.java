@@ -10,10 +10,14 @@ import java.util.Map;
  */
 public class FilesCompress {
     public static void main(String[] args) {
-        String srcFile = "D:\\test.png";
-        String outFile = "D:\\test.zip";
+        String srcFile = "D:\\01_test\\call_20000KB.log";
+        String outFile = "D:\\01_test\\call_20000KB.zip";
+
+        long start = System.currentTimeMillis();
         zipFile(srcFile,outFile);
 //        unZipFile(outFile,srcFile);
+        long end = System.currentTimeMillis();
+        System.out.println((end-start)+"ms");
 
     }
     public static void zipFile(String src,String out){

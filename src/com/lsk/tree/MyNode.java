@@ -103,6 +103,9 @@ public class MyNode {
         System.out.println(this);
     }
 
+    public void  levelTraverse(){
+
+    }
     /**
      * 前序查找指定结点
      * @param no

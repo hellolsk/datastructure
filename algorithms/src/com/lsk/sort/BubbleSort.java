@@ -34,7 +34,7 @@ public class BubbleSort {
             if (!flag) {
                 break;
             } else {
-//                System.out.println("第" + (i + 1) + "次冒泡" + Arrays.toString(arr));
+                System.out.println("第" + (i + 1) + "次冒泡" + Arrays.toString(arr));
                 flag = false;
             }
         }
